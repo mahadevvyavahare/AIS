@@ -3,6 +3,11 @@
 <title>
 	Manage Irrigation
 </title>
+<script type="text/javascript">
+function sure(){
+  return(confirm("Are You sure want to have water on this plat"));
+}
+</script>
 <style>
 .transbox
 {
@@ -34,6 +39,21 @@ session_start();
 <center>
 <div class="transbox">
 	
+  <form action="turnOn.php?motor=1" onSubmit="return sure();">
+    <input type="submit" value="Turn On To This Plot" style="margin-left:-40%;margin-top:15%">
+    </form>
+    
+    <form action="turnOn.php?motor=2"onSubmit="return sure();">
+    <input type="submit" value="Turn On To This Plot" style="margin-left:40%;margin-top:-6%">
+    </form>
+    
+    <form action="turnOn.php?motor=3"onSubmit="return sure();">
+    <input type="submit" value="Turn On To This Plot" style="margin-left:40%;margin-top:15%">
+    </form>
+
+    <form action="turnOn.php?motor=4"onSubmit="return sure();">
+    <input type="submit" value="Turn On To This Plot" style="margin-left:-40%;margin-top:-6%">
+    </form>
 
 </div>
 </center>

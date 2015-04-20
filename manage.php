@@ -39,19 +39,23 @@ session_start();
 <center>
 <div class="transbox">
 	
-  <form action="turnOn.php?motor=1" onSubmit="return sure();">
+  <form action="turnOn.php" onSubmit="return sure();" method='get'>
+    <input type="text" name=motor value='1' style="display:none;"> 
     <input type="submit" value="Turn On To This Plot" style="margin-left:-40%;margin-top:15%">
     </form>
     
-    <form action="turnOn.php?motor=2"onSubmit="return sure();">
+    <form action="turnOn.php"onSubmit="return sure();method='get'">
+       <input type="text" name=motor value='2' style="display:none;"> 
     <input type="submit" value="Turn On To This Plot" style="margin-left:40%;margin-top:-6%">
     </form>
     
-    <form action="turnOn.php?motor=3"onSubmit="return sure();">
+    <form action="turnOn.php"onSubmit="return sure();"method='get'>
+       <input type="text" name=motor value='4' style="display:none;"> 
     <input type="submit" value="Turn On To This Plot" style="margin-left:40%;margin-top:15%">
     </form>
 
-    <form action="turnOn.php?motor=4"onSubmit="return sure();">
+    <form action="turnOn.php"onSubmit="return sure();"method='get'>
+       <input type="text" name=motor value='3' style="display:none;"> 
     <input type="submit" value="Turn On To This Plot" style="margin-left:-40%;margin-top:-6%">
     </form>
 

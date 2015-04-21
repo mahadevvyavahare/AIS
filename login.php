@@ -1,11 +1,55 @@
  <?php
 include 'header.php';
+        //echo 'in admin';if(isset($_POST['username'])&&isset($_POST['password']))
+        $uname=$_POST['username'];
+        $pass=$_POST['password'];
+  if(!empty($uname)&&!empty($pass))
+        {
+         if(mysql_connect('localhost','root',''))
+         {
+             if(mysql_select_db('ais'))
+             {
+                $pass=md5($pass);
+
+                 $query='select * from admin where username=\''.$uname. '\'AND password=\''.$pass.'\'';
+                 //echo $query;
+
+                 $result=mysql_query($query);
+                 $count=@mysql_num_rows($result);
+                  if($count==1)
+                  {  session_start();
+                      $query_row=mysql_fetch_assoc($result);
+                      $_SESSION['id']=$query_row['username'];
+                      header('location:manage.php');
+                    //  echo('Login successfully.');
+                      die();
+                      //session_end();
+                  }
+                 else
+                     echo('<div class="alert alert-danger" role="alert">
+        Incorrect Username Or Password.
+</div>');
+                 unset($_POST['username']);
+                 unset($_POST['password']);
+
+             }
+         }
+
+
+        }
+        else
+        {
+            echo(' <div class="alert alert-danger" role="alert">
+        Please Enter Username And Password.
+</div>');
+        }
 ?>
+
 
    
     <center>
 
-     <form action="#" method="post" id="loginform">
+     <form action="login.php" method="post" id="loginform">
        <div class="row ">
            <div class="col-md-4 col-md-offset-4">
        <div class="" style="padding:6%;margin-top:20%;">
@@ -30,74 +74,6 @@ include 'header.php';
         &nbsp; <a href="forgotpass.php">Forgot password?</a>
         </div>
                    
-<?php
-if(isset($_GET['error']))
-{
-    if(!empty($_GET['error']))
-    {
-        echo $_GET['error'];
-    }
-}
-
-echo ('
-        <script type="text/jvascript">
-        location.reload(true)
-        </script>
-        ');
-
-if(!isset($_SESSION['id']))
-    {
-        //echo 'in admin';
-if(isset($_POST['username'])&&isset($_POST['password']))
-    {
-        $uname=$_POST['username'];
-        $pass=$_POST['password'];
-
-        //echo($uname.$pass);
-        if(!empty($uname)&&!empty($pass))
-        {
-         if(mysql_connect('localhost','root',''))
-         {
-             if(mysql_select_db('hospital'))
-             {
-                 $pass=md5($pass);
-
-                 $query='select * from admin where username=\''.$uname. '\'AND password=\''.$pass.'\'';
-                 //echo $query;
-                 $result=mysql_query($query);
-                 $count=@mysql_num_rows($result);
-                  if($count==1)
-                  {  session_start();
-                      $query_row=mysql_fetch_assoc($result);
-                      $_SESSION['id']=$query_row['username'];
-                      header('location:index.php');
-                    //  echo('Login successfully.');
-                      die();
-                      //session_end();
-                  }
-                 else
-                     echo('<div class="alert alert-danger" role="alert">
-        Incorrect Username Or Password.
-</div>');
-                 unset($_POST['username']);
-                 unset($_POST['password']);
-
-             }
-         }
-
-
-        }
-        else
-        {
-            echo(' <div class="alert alert-danger" role="alert">
-        Please Enter Username And Password.
-</div>');
-        }
-
-    }
-
-}
-?>
 
                </div>
            </div>

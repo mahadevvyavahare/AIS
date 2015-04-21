@@ -34,29 +34,42 @@ include 'header.php';
 session_start();
 
 
-?>
+?>        
 
 <center>
 <div class="transbox">
 	
   <form action="turnOn.php" onSubmit="return sure();" method='get'>
-    <input type="text" name=motor value='1' style="display:none;"> 
-    <input type="submit" value="Turn On To This Plot" style="margin-left:-40%;margin-top:15%">
+    <input type="text" name=motor value='1' style="display:none;">
+    <div style="margin-left:-40%;margin-top:15%">
+    Tap Status<b>ON</b>
+    <input type="submit" value="Turn On To This Plot">
+    </div>
     </form>
     
     <form action="turnOn.php"onSubmit="return sure();method='get'">
-       <input type="text" name=motor value='2' style="display:none;"> 
-    <input type="submit" value="Turn On To This Plot" style="margin-left:40%;margin-top:-6%">
+    <div style="margin-left:40%;margin-top:-6%">
+     Tap Status<b>ON</b>
+    <input type="submit" value="Turn On To This Plot">
+    </div>  
+    <input type="text" name=motor value='2' style="display:none;">
     </form>
     
     <form action="turnOn.php"onSubmit="return sure();"method='get'>
-       <input type="text" name=motor value='4' style="display:none;"> 
-    <input type="submit" value="Turn On To This Plot" style="margin-left:40%;margin-top:15%">
-    </form>
+      <input type="text" name=motor value='4' style="display:none;"> 
+     <div  style="margin-left:40%;margin-top:15%">
+      Tap Status<b>ON</b>
+      <input type="submit" value="Turn On To This Plot">
+    </div>
+     </form>
 
     <form action="turnOn.php"onSubmit="return sure();"method='get'>
-       <input type="text" name=motor value='3' style="display:none;"> 
-    <input type="submit" value="Turn On To This Plot" style="margin-left:-40%;margin-top:-6%">
+    <input type="text" name=motor value='3' style="display:none;"> 
+     
+     <div  style="margin-left:-40%;margin-top:-6%">
+      Tap Status<b>ON</b> 
+    <input type="submit" value="Turn On To This Plot">
+    </div>
     </form>
 
 </div>

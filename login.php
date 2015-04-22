@@ -1,24 +1,25 @@
  <?php
 include 'header.php';
         //echo 'in admin';if(isset($_POST['username'])&&isset($_POST['password']))
+        if(isset($_POST['username'])&&isset($_POST['password'])){
         $uname=$_POST['username'];
         $pass=$_POST['password'];
   if(!empty($uname)&&!empty($pass))
         {
-         if(mysql_connect('localhost','root',''))
+         if($con=mysqli_connect('localhost','root',''))
          {
-             if(mysql_select_db('ais'))
+             if(mysqli_select_db($con,'ais'))
              {
                 $pass=md5($pass);
 
                  $query='select * from admin where username=\''.$uname. '\'AND password=\''.$pass.'\'';
                  //echo $query;
 
-                 $result=mysql_query($query);
-                 $count=@mysql_num_rows($result);
+                 $result=mysqli_query($con,$query);
+                 $count=@mysqli_num_rows($result);
                   if($count==1)
                   {  session_start();
-                      $query_row=mysql_fetch_assoc($result);
+                      $query_row=mysqli_fetch_assoc($result);
                       $_SESSION['id']=$query_row['username'];
                       header('location:manage.php');
                     //  echo('Login successfully.');
@@ -43,6 +44,7 @@ include 'header.php';
         Please Enter Username And Password.
 </div>');
         }
+      }
 ?>
 
 

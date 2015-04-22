@@ -5,13 +5,11 @@
             <link href="css/bootstrap.theme.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="img/favicon.ico"/>
         <style>
-body
-{
+  body
+  {
   background: url(img/back.jpeg);
   height:100%;
   }
-
-
         </style>
         <title>AIS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,9 +34,7 @@ body
       
       <li><a href="login.php">Login</a></li>
       <li><a href="manage.php">Manage Your Irrigation</a></li>
-       <li><a href="#">Add Users</a></li>
-      
-    </ul>
+       </ul>
   </li>
 </ul>   
 <p></p>

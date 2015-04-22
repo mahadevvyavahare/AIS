@@ -20,13 +20,17 @@
         <link rel="shortcut icon" href="img/favicon.ico"/>
     </head>
     <body>
-
+      
+<div class="page-header"><marquee>
+<center><h1><font color="white">REMOTE IRRIGATION CONTROLL SYSTEM</font><small></small></h1></center>
+</marquee>
+</div>
+      
   <ul class="nav nav-tabs"style="padding-top:5%;margin-left:55%;">
 <li role="presentation" class="active"><a href="index.php">Home</a></li>
   <li role="presentation"><a href="#">About This Project</a></li>
   <li role="presentation"><a href="#">About Developer</a></li>
-  
-  <li role="presentation" class="dropdown">
+<li role="presentation" class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
       LogIn <span class="caret"></span>
     </a>

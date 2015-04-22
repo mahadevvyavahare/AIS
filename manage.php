@@ -52,7 +52,7 @@ $i++;
     Tap Status <b><?php echo $motor_status[0];
     $val='OFF';
 
-    if(strcmp($motor_status[0],"OFF")){
+    if(!strcmp($motor_status[0],'OFF')){
       $val='ON';
     }
       echo '</b>';
@@ -71,7 +71,7 @@ $i++;
      Tap Status <b><?php echo $motor_status[0];
     $val='OFF';
 
-    if(strcmp($motor_status[1],"OFF")){
+    if(!strcmp($motor_status[1],"OFF")){
       $val='ON';
     }
       echo '</b>';
@@ -82,12 +82,12 @@ $i++;
     </form>
     <br>
     <form action="turnOn.php"onSubmit="return sure();"method='get'>
-      <input type="text" name=motor value='4' style="display:none;"> 
+      <input type="text" name=motor value='3' style="display:none;"> 
      <div  style="margin-left:-40%;margin-top:10%">
       Tap Status <b><?php echo $motor_status[0];
     $val='OFF';
 
-    if(strcmp($motor_status[2],"OFF")){
+    if(!strcmp($motor_status[2],"OFF")){
       $val='ON';
     }
       echo '</b>';
@@ -102,13 +102,13 @@ $i++;
 
 
     <form action="turnOn.php"onSubmit="return sure();"method='get'>
-    <input type="text" name=motor value='3' style="display:none;"> 
+    <input type="text" name=motor value='4' style="display:none;"> 
      
      <div  style="margin-left:40%;margin-top:-10%">
       Tap Status <b><?php echo $motor_status[3];
     $val='OFF';
 
-    if(strcmp($motor_status[3],"OFF")){
+    if(!strcmp($motor_status[3],"OFF")){
       $val='ON';
     }
       echo '</b>';

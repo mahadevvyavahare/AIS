@@ -17,7 +17,7 @@ function sure(){
   background: url(img/structure.jpg);
   background-repeat: no-repeat;
   width:820px;
-  height:661px;    
+  height:461px;    
   
   //w:820
   //h:661
@@ -58,9 +58,6 @@ $i++;
       echo '</b>';
       echo "  <input type='submit' value='Turn ".$val." To This Plot No 1'>"
       ?>
-
-  
-    
     </div>
     </form>
     <div id='motor1_status' style="margin-left:40%;margin-top:-10%;">
@@ -121,6 +118,13 @@ $i++;
   </div>
 </div>
 </center>
+
+<center>
+  <br>
+<a href='log.php'><h3><font color="white">View History and Log</font></h3></a>
+<br><br><br>
+</center>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

@@ -124,7 +124,6 @@ $i++;
 <a href='log.php'><h3><font color="white">View History and Log</font></h3></a>
 <br><br><br>
 </center>
-
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

@@ -18,7 +18,7 @@ $res_motor4=mysql_query($qry);
 
 <div class="row">
   <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
+    <a href="" class="thumbnail">
      PLOT NO. 1.. IRRIGATION LOG. 
     </a>
     <table border>
@@ -34,12 +34,14 @@ $res_motor4=mysql_query($qry);
     	echo "</tr>";
     }
 ?>
+<html>
+<body>
 </table>
   </div>
 
   <div class="row">
   <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
+    <a href="" class="thumbnail">
       PLOT NO. 2.. IRRIGATION LOG.
 	</a>
 
@@ -61,7 +63,7 @@ $res_motor4=mysql_query($qry);
 
   <div class="row">
   <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
+    <a href="" class="thumbnail">
       PLOT NO. 3.. IRRIGATION LOG.
     </a>
     <table border>
@@ -82,7 +84,7 @@ $res_motor4=mysql_query($qry);
 
   <div class="row">
   <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
+    <a href="" class="thumbnail">
       PLOT NO. 4.. IRRIGATION LOG.
     </a>
   
@@ -103,3 +105,8 @@ $res_motor4=mysql_query($qry);
   </div>
 
 </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -34,7 +34,7 @@ $i=0;
 $motor_status;
 while($i<4){
 $d=$i+1;
-$res=mysql_query("select * from motor1_status");
+$res=mysql_query("select * from motor".$d."_status");
 $row=mysql_fetch_assoc($res);
 $motor_status[$i]=$row['status'];
 //$motor_status[$i];

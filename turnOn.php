@@ -9,6 +9,11 @@ sr.NO	GPIO PIN    		MOTOR  No
 4		  17 					4	
 
 */
+function getStatus($motor_no,$pin_no){
+return "ON";
+
+}
+
 function start_motor($motor_no,$pin_no){
 	echo $motor_no;
 
@@ -29,10 +34,11 @@ function start_motor($motor_no,$pin_no){
 $query="insert into motor".$motor_no."_log values('',NOW(),'')";
 
 mysql_query($query);
-
+//echo getStatus(1,4);
 header('location:manage.php');
 
 }
+
 
 $motor_no;
 if(isset($_GET['motor'])){

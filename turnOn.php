@@ -17,6 +17,7 @@ return "ON";
 function start_motor($motor_no,$pin_no){
 	echo $motor_no;
 
+
 //Do operation..
 
 
@@ -75,12 +76,9 @@ switch ($motor_no) {
 		break;
 }
 
-
 }
 }
-
 die();
-
 require 'gpiolib/vendor/autoload.php';
 use PhpGpio\Gpio;
 echo "Setting up pin 17\n";

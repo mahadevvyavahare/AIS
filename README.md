@@ -1,2 +1,3 @@
 # AIS
-Automatic Irrigation Control System
+Remote Irrigation Controll Using R Pi  and PHP GPIO Library
+

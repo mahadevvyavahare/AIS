@@ -5,7 +5,6 @@
 table,tr,th,td{
 
 border:1px solid red;
-
 }
 .transbox{
 
@@ -14,7 +13,9 @@ border:1px solid red;
     border: 1px solid black;
     opacity: 0.8;
     filter: alpha(opacity=60);
+    padding-bottom: 30px;
 }
+
 </style>
 
 <?php

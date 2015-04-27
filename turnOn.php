@@ -3,11 +3,11 @@
 
 //pin NO:s
 /*
-sr.NO	GPIO PIN    		MOTOR  No
-1          5					1
-2		   6					2
-3 		   7					3	
-4		  17 					4	
+Motor_no	GPIO NO    		Actual Pin No 			Ground
+1         		7		         7                    9
+2		   		0			     11                   25
+3 		   		2				 13                   39
+4		   		3				 15                   34
 
 */
 
@@ -30,8 +30,9 @@ function start_motor($motor_no,$pin_no){
 		
 		
 
-		//echo "Status ON Doing OFF";
-
+		
+		system("gpio mode ".$pin_no." out");
+		system("gpio write ".$pin_no." ".1 );
 		
 		$query="update motor".$motor_no."_status set status='OFF' where status='ON'";
 		echo getStatus($motor_no,10);
@@ -69,6 +70,11 @@ function start_motor($motor_no,$pin_no){
 	  //echo $query;
 	  mysqli_query($con,$query);
 
+
+	system("gpio mode ".$pin_no." out");
+	system("gpio write ".$pin_no." ".0 );
+		
+
 	
 	}
 //Do operation..
@@ -97,25 +103,25 @@ if(!empty($_GET['motor']))
 switch ($motor_no) {
 	case 1:
 	//echo "motor No ".$motor_no;
-	start_motor(1,17);
+	start_motor(1,7);     //actual Pin No 7
 
 		break;
 	case 2:
 		//echo "motor No ".$motor_no;
-		start_motor(2,17);
+		start_motor(2,0);   //Actual Pin  NO 11
 
 		break;
 	
 	case 3:
 		//echo "motor No ".$motor_no;
-		start_motor(3,17);
+		start_motor(3,2);    //Actual Pin No 13
 		
 		
 		break;
 	
 	case 4:
 		//echo "motor No ".$motor_no;
-		start_motor(4,17);
+		start_motor(4,3);       //Actual Pin No 15
 		break;
 	
 	default:

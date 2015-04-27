@@ -1,0 +1,9 @@
+//pin NO:s
+/*
+Motor_no	GPIO NO    		Actual Pin No 			Ground
+1         		7		         7                    9
+2		   		0			     11                   25
+3 		   		2				 13                   39
+4		   		3				 15                   34
+
+*/

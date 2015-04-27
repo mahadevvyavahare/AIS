@@ -1,5 +1,5 @@
 <?php
-if($con=mysqli_connect('localhost','root',''))
+if($con=mysqli_connect('localhost','root','raspberrypi'))
 {
 mysqli_select_db($con,'ais');	
 }

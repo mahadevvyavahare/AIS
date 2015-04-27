@@ -32,7 +32,7 @@ function start_motor($motor_no,$pin_no){
 
 		
 		system("gpio mode ".$pin_no." out");
-		system("gpio write ".$pin_no." ".1 );
+		system("gpio write ".$pin_no." 0");
 		
 		$query="update motor".$motor_no."_status set status='OFF' where status='ON'";
 		echo getStatus($motor_no,10);
@@ -72,7 +72,7 @@ function start_motor($motor_no,$pin_no){
 
 
 	system("gpio mode ".$pin_no." out");
-	system("gpio write ".$pin_no." ".0 );
+	system("gpio write ".$pin_no." 1");
 		
 
 	
@@ -103,6 +103,7 @@ if(!empty($_GET['motor']))
 switch ($motor_no) {
 	case 1:
 	//echo "motor No ".$motor_no;
+
 	start_motor(1,7);     //actual Pin No 7
 
 		break;

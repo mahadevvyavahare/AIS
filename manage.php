@@ -65,7 +65,7 @@ $i++;
   </div>
     <form action="turnOn.php"onSubmit="return sure();method='get'">
     <div style="margin-left:40%;margin-top:3%">
-     Tap Status <b><?php echo $motor_status[0];
+     Tap Status <b><?php echo $motor_status[1];
     $val='OFF';
 
     if(!strcmp($motor_status[1],"OFF")){
@@ -81,7 +81,7 @@ $i++;
     <form action="turnOn.php"onSubmit="return sure();"method='get'>
       <input type="text" name=motor value='3' style="display:none;"> 
      <div  style="margin-left:-40%;margin-top:10%">
-      Tap Status <b><?php echo $motor_status[0];
+      Tap Status <b><?php echo $motor_status[2];
     $val='OFF';
 
     if(!strcmp($motor_status[2],"OFF")){

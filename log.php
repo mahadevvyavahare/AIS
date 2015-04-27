@@ -1,5 +1,26 @@
+<html>
+<head>
+<title>Motor Log</title>
+  <style type="text/css">
+table,tr,th,td{
+
+border:1px solid red;
+
+}
+.transbox{
+
+ 
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.8;
+    filter: alpha(opacity=60);
+}
+</style>
+
 <?php
 include 'header.php';
+echo "<div class='transbox'>";
+
 include 'connect.php';
 $qry='select * from motor1_log';
 $res_motor1=mysql_query($qry);
@@ -45,7 +66,7 @@ $res_motor4=mysql_query($qry);
       PLOT NO. 2.. IRRIGATION LOG.
 	</a>
 
-  <table border>
+  <table>
       <tr>
         <th>Start Time</th>
         <th>Stop Time</th>
@@ -66,7 +87,7 @@ $res_motor4=mysql_query($qry);
     <a href="" class="thumbnail">
       PLOT NO. 3.. IRRIGATION LOG.
     </a>
-    <table border>
+    <table>
       <tr>
         <th>Start Time</th>
         <th>Stop Time</th>
@@ -88,7 +109,7 @@ $res_motor4=mysql_query($qry);
       PLOT NO. 4.. IRRIGATION LOG.
     </a>
   
-<table border>
+<table>
       <tr>
         <th>Start Time</th>
         <th>Stop Time</th>
@@ -103,10 +124,9 @@ $res_motor4=mysql_query($qry);
 ?>
 </table>
   </div>
-
+</div>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>

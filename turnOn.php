@@ -12,18 +12,19 @@ sr.NO	GPIO PIN    		MOTOR  No
 */
 
 include 'connect.php';
-function getStatus($motor_no,$pin_no){
 
+function getStatus($motor_no,$pin_no){
+include 'connect.php';
 $query="select * from motor".$motor_no."_status";
-$result=mysql_query($query);
-$row=mysql_fetch_assoc($result);
+$result=mysqli_query($con,$query);
+$row=mysqli_fetch_assoc($result);
 return $row['status'];
 
 }
 
 
 function start_motor($motor_no,$pin_no){
-	
+	include 'connect.php';
 	//echo $motor_no;
 	if(strcmp(getStatus($motor_no,$pin_no),"ON")==0){
 		
@@ -34,18 +35,18 @@ function start_motor($motor_no,$pin_no){
 		
 		$query="update motor".$motor_no."_status set status='OFF' where status='ON'";
 		echo getStatus($motor_no,10);
-				mysql_query($query);
+				mysqli_query($con,$query);
 		echo $query;
 
 	//Update LOg
 		$query="select max(id) from motor".$motor_no."_log";
-		$res=mysql_query($query);
-		$row=mysql_fetch_assoc($res);
+		$res=mysqli_query($con,$query);
+		$row=mysqli_fetch_assoc($res);
 		$id=$row['max(id)'];
 
 	  $query="update motor".$motor_no."_log"." set end_time=now() where id=".$id;
 	  echo $query;
-	  mysql_query($query);
+	  mysqli_query($con,$query);
 
 	}
 	else{
@@ -54,8 +55,8 @@ function start_motor($motor_no,$pin_no){
 	$query="update motor".$motor_no."_status set status='ON' where status='OFF'";
 		
 		echo getStatus($motor_no,10);
-		mysql_query($query);
-		echo $query;
+		mysqli_query($con,$query);
+		//echo $query;
 
 	//Update LOg
 		//$query="select max(id) from motor".$motor_no."_log";
@@ -65,8 +66,8 @@ function start_motor($motor_no,$pin_no){
 
 	  $query="insert into motor".$motor_no."_log values('',NOW(),'')";
 
-	  echo $query;
-	  mysql_query($query);
+	  //echo $query;
+	  mysqli_query($con,$query);
 
 	
 	}
@@ -82,7 +83,7 @@ function start_motor($motor_no,$pin_no){
 	//Update status
 	//echo $query;
 	//echo getStatus(1,4);
-//header('location:manage.php');
+header('location:manage.php');
 
 }
 

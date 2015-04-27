@@ -4,7 +4,7 @@
             <link href="css/bootstrap.min.css" rel="stylesheet">
             <link href="css/bootstrap.theme.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="img/favicon.ico"/>
-        <style>
+<style>
   body
   {
   background: url(img/back.jpeg);

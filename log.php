@@ -7,9 +7,7 @@ table,tr,th,td{
 border:1px solid red;
 }
 .transbox{
-
- 
-    background-color: #ffffff;
+  background-color: #ffffff;
     border: 1px solid black;
     opacity: 0.8;
     filter: alpha(opacity=60);
@@ -23,17 +21,19 @@ include 'header.php';
 echo "<div class='transbox'>";
 
 include 'connect.php';
+
 $qry='select * from motor1_log';
-$res_motor1=mysql_query($qry);
+
+$res_motor1=mysqli_query($con,$qry);
 
 $qry='select * from motor2_log';
-$res_motor2=mysql_query($qry);
+$res_motor2=mysqli_query($con,$qry);
 
 $qry='select * from motor3_log';
-$res_motor3=mysql_query($qry);
+$res_motor3=mysqli_query($con,$qry);
 
 $qry='select * from motor4_log';
-$res_motor4=mysql_query($qry);
+$res_motor4=mysqli_query($con,$qry);
 
 ?>
 <br><br>
@@ -41,15 +41,15 @@ $res_motor4=mysql_query($qry);
 <div class="row">
   <div class="col-xs-6 col-md-3">
     <a href="" class="thumbnail">
-     PLOT NO. 1.. IRRIGATION LOG. 
+     <center>PLOT NO. 2.. IRRIGATION LOG.</center> 
     </a>
     <table border>
     	<tr>
-    		<th>Start Time</th>
-    		<th>Stop Time</th>
+    		<th><center>Start Time</center></th>
+    		<th><center>Stop Time</center></th>
     	</tr>
     <?php
-    while($row=mysql_fetch_assoc($res_motor1)){
+    while($row=mysqli_fetch_assoc($res_motor1)){
     	echo "<tr>";
     	echo "<td>".$row['start_time']."</td>";
     	echo "<td>".$row['end_time']."</td>";
@@ -64,16 +64,16 @@ $res_motor4=mysql_query($qry);
   <div class="row">
   <div class="col-xs-6 col-md-3">
     <a href="" class="thumbnail">
-      PLOT NO. 2.. IRRIGATION LOG.
+      <center>PLOT NO. 2.. IRRIGATION LOG.</center>
 	</a>
 
   <table>
       <tr>
-        <th>Start Time</th>
-        <th>Stop Time</th>
+        <th><center>Start Time</center></th>
+        <th><center>Stop Time</center></th>
       </tr>
     <?php
-    while($row=mysql_fetch_assoc($res_motor2)){
+    while($row=mysqli_fetch_assoc($res_motor2)){
       echo "<tr>";
       echo "<td>".$row['start_time']."</td>";
       echo "<td>".$row['end_time']."</td>";
@@ -86,15 +86,15 @@ $res_motor4=mysql_query($qry);
   <div class="row">
   <div class="col-xs-6 col-md-3">
     <a href="" class="thumbnail">
-      PLOT NO. 3.. IRRIGATION LOG.
+      <center>PLOT NO. 3.. IRRIGATION LOG.</center>
     </a>
     <table>
       <tr>
-        <th>Start Time</th>
-        <th>Stop Time</th>
-      </tr>
+        <th><center>Start Time</center></th>
+        <th><center>Stop Time</center></th>
+       </tr>
     <?php
-    while($row=mysql_fetch_assoc($res_motor3)){
+    while($row=mysqli_fetch_assoc($res_motor3)){
       echo "<tr>";
       echo "<td>".$row['start_time']."</td>";
       echo "<td>".$row['end_time']."</td>";
@@ -107,16 +107,16 @@ $res_motor4=mysql_query($qry);
   <div class="row">
   <div class="col-xs-6 col-md-3">
     <a href="" class="thumbnail">
-      PLOT NO. 4.. IRRIGATION LOG.
+      <center>PLOT NO. 4.. IRRIGATION LOG.</center>
     </a>
   
 <table>
       <tr>
-        <th>Start Time</th>
-        <th>Stop Time</th>
+        <th><center>Start Time</center></th>
+        <th><center>Stop Time</center></th>
       </tr>
     <?php
-    while($row=mysql_fetch_assoc($res_motor4)){
+    while($row=mysqli_fetch_assoc($res_motor4)){
       echo "<tr>";
       echo "<td>".$row['start_time']."</td>";
       echo "<td>".$row['end_time']."</td>";

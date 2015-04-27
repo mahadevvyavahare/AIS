@@ -6,10 +6,7 @@ include 'header.php';
         $pass=$_POST['password'];
   if(!empty($uname)&&!empty($pass))
         {
-         if($con=mysqli_connect('localhost','root',''))
-         {
-             if(mysqli_select_db($con,'ais'))
-             {
+         include 'connect.php';
                 $pass=md5($pass);
 
                  $query='select * from admin where username=\''.$uname. '\'AND password=\''.$pass.'\'';
@@ -33,9 +30,7 @@ include 'header.php';
                  unset($_POST['username']);
                  unset($_POST['password']);
 
-             }
-         }
-
+             
 
         }
         else
@@ -46,10 +41,7 @@ include 'header.php';
         }
       }
 ?>
-
-
-   
-    <center>
+<center>
 
      <form action="login.php" method="post" id="loginform">
        <div class="row ">
@@ -88,5 +80,4 @@ include 'header.php';
     <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
-
  

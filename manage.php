@@ -34,8 +34,8 @@ $i=0;
 $motor_status;
 while($i<4){
 $d=$i+1;
-$res=mysql_query("select * from motor".$d."_status");
-$row=mysql_fetch_assoc($res);
+$res=mysqli_query($con,"select * from motor".$d."_status");
+$row=mysqli_fetch_assoc($res);
 $motor_status[$i]=$row['status'];
 //$motor_status[$i];
 $i++;
@@ -92,8 +92,7 @@ $i++;
       ?>
  </div>
      </form>
-
-     <div id='motor1_status' style="margin-left:-30%;margin-top:5%">
+  <div id='motor1_status' style="margin-left:-30%;margin-top:5%">
     Status motor 3
   </div>
 
